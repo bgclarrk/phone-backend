@@ -1,2 +1,0 @@
-class CallsController < ApplicationController
-end
