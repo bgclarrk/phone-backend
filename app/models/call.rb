@@ -1,5 +1,5 @@
 class Call < ApplicationRecord
-    validates :phone_number, presence: true
+    validates :phone_number, :duration, presence: true
 
 
 end
