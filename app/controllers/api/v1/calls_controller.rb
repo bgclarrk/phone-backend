@@ -17,6 +17,7 @@ class Api::V1::CallsController < ApplicationController
     end
 
     def destroy
+        byebug
         @call.delete
     end
 
