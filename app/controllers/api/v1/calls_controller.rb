@@ -7,18 +7,23 @@ class Api::V1::CallsController < ApplicationController
         render json: @calls
     end
 
+    def new
+        @call = Call.new
+    end
+
     def create
         @call = Call.new(call_params)
         if @call.save
-            render json: @call
+            render json: @calls
         else
             render json: {error: "Could not create call"}
         end
     end
 
     def destroy
-        byebug
         @call.delete
+
+        render json: @calls
     end
 
     private
