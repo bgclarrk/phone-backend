@@ -22,8 +22,6 @@ class Api::V1::CallsController < ApplicationController
 
     def destroy
         @call.delete
-
-        render json: @calls
     end
 
     private
