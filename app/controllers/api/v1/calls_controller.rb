@@ -12,7 +12,10 @@ class Api::V1::CallsController < ApplicationController
     end
 
     def create
-        @call = Call.new(call_params)
+        @call = Call.new
+        @call.phone_number = params[:phoneNumber]
+        @call.duration = params[:duration]
+
         if @call.save
             render json: @calls
         else
