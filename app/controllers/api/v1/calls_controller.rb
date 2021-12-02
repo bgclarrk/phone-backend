@@ -17,7 +17,7 @@ class Api::V1::CallsController < ApplicationController
         @call.duration = params[:duration]
 
         if @call.save
-            render json: @calls
+            render json: @call
         else
             render json: {error: "Could not create call"}
         end
@@ -25,6 +25,8 @@ class Api::V1::CallsController < ApplicationController
 
     def destroy
         @call.delete
+
+        render json: {}
     end
 
     private
